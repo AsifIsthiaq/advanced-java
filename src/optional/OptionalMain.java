@@ -46,6 +46,30 @@ public class OptionalMain {
         ==
         Has SmartPhone & EWallet But No Account Number
          */
+        System.out.println("----------flatmap---------------");
+        System.out.println(getEWalletAccountNumberUsingFlatMap(p));
+        System.out.println(getEWalletAccountNumberUsingFlatMap(p1));
+        System.out.println(getEWalletAccountNumberUsingFlatMap(null));
+
+        System.out.println(getEWalletAccountNumberUsingFlatMap(personWithSpNoEW));
+        System.out.println(getEWalletAccountNumberUsingFlatMap(completePerson));
+        System.out.println(getEWalletAccountNumberUsingFlatMap(personWithNoAccountNumber));
+    }
+
+    public static String getEWalletAccountNumberUsingFlatMap(Person person){
+        // we use map to convert one data type to another
+        // here we could use map but will will return Optional<Optional<String>> which results in more code
+        // so we need to use flatmap so it will return Optional<String>
+//        return Optional.ofNullable(person)
+//                .flatMap(p -> p.getSmartPhone())
+//                .flatMap(sp -> sp.geteWallet())
+//                .flatMap(ew -> ew.getAccountNumber())
+//                .orElse("Unable to get Account Number"); // here orElse is retriving the value from optional if the value is not present then it returns the default value.
+        return Optional.ofNullable(person)
+                .flatMap(Person::getSmartPhone)
+                .flatMap(SmartPhone::geteWallet)
+                .flatMap(EWallet::getAccountNumber)
+                .orElse("Unable to get Account Number");
     }
 
     public static String getEWalletAccountNumber(Person person){
