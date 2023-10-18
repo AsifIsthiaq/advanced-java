@@ -18,6 +18,7 @@ import java.util.List;
  * processing Time = [6,5]
  * numTasks=[8, 8]
  * Queue 0 can process a maximum of 4 tasks
+ * output:15
  * My Explanation:
  * 2 ta queue ase concorently run korbe
  * ami each set of task ke akta kore queue te dia dibo
@@ -36,7 +37,6 @@ public class TaskQueue {
             // thkbe tai aro akbar batch cholbe total 7 iteration time7*5 =35
             int temp = (numTasks.get(i) / batchSize.get(i)) + (t==0 ? 0:1);
             maxTime = Math.max(maxTime, (long)processingTime.get(i)*temp);
-            System.out.println(maxTime);
         }
         return maxTime;
     }
