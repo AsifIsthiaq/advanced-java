@@ -7,7 +7,12 @@ package interviewproblems.morganstanley;
 
 public class StringMatching {
 
-    public static boolean isSingleEditAway(String str1, String str2) {
+    public static boolean isSingleEditAway(String str1, String str2){
+
+        return true;
+    }
+
+    public static boolean isSingleEditAway_(String str1, String str2) {
         int len1 = str1.length();
         int len2 = str2.length();
 
