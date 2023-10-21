@@ -1,4 +1,5 @@
 package lamda.helping;
+
 public class BankAccount {
     private final String accountNumber;
     private double balance;
@@ -14,6 +15,19 @@ public class BankAccount {
 
     public void applyMaintenanceFee(double fee) {
         balance -= fee;
+    }
+
+    public void transferFundsTo(BankAccount targetAccount, double amount) {
+        if (amount > 0 && balance >= amount) {
+            balance -= amount;
+            targetAccount.deposit(amount);
+        }
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
     }
 
     @Override
