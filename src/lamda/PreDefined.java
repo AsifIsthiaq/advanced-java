@@ -112,7 +112,7 @@ public class PreDefined {
         System.out.println();
         // BiConsumer<BankAccount, Double> transferMoney = (dest, amount) -> bc2.transferFundsTo(dest, amount);
         BiConsumer<BankAccount, Double> transferMoney = bc2::transferFundsTo;
-        transferMoney.accept(bc1,40000.00);
+        transferMoney.accept(bc1, 40000.00);
         System.out.println(bc1);
         System.out.println(bc2);
         // Supplier
