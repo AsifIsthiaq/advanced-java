@@ -2,7 +2,8 @@ package interviewproblems.genpact;
 
 import java.util.Arrays;
 import java.util.List;
-// shift zero at the end maintaining order
+// shift zeros to the end by maintaining order
+// min stack prob
 public class ShiftZero {
     public static void main(String[] args) {
         int[] arr = {1,3,9,0,4,5,0,5,6,3,0,9};
